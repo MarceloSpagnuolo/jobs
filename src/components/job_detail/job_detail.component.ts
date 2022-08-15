@@ -28,4 +28,8 @@ export class Job_detailComponent implements OnInit {
     })
   }
 
+  test() {
+    console.log('asd')
+  }
+
 }

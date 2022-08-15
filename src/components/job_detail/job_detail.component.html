@@ -57,7 +57,8 @@
       <ng-template #elseBlock>
         <img src="../../assets/uncheck.png" alt="unavailable" class="free">
       </ng-template>
-      <button class="button" *ngIf="job.applicants.indexOf(applicant) < 0">Remove</button>
+      
+      <button class="button" (click)="test()" *ngIf="job.applicants.indexOf(applicant) < 0">Remove</button>
     </div>
   </div>
 </div>
