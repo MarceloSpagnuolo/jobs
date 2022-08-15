@@ -1,12 +1,14 @@
 .container {
     font-family: Montserrat;
     font-size: 16px;
+    display: flex;
 }
 
 .content {
     margin-top: 40px;
     margin-left: 40px;
     width: 50%;
+    margin-right: 20px;
 }
 
 .input {
@@ -52,4 +54,35 @@
     background-color: cornflowerblue;
     color: white;
     border: 1px solid cornflowerblue;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.up {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.free {
+    width: 30px;
+    height: 30px;
 }

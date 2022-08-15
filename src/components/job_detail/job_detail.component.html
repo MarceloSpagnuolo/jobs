@@ -12,9 +12,8 @@
     <div class="selects">
       <div class="field">
         <label for="techs">Techs</label>
-        <select multiple name="techs" [(ngModel)]="job.techs">
+        <select multiple name="techs" [(ngModel)]="job.techs" disabled="true">
           <option *ngFor="let tech of job.techs"
-            [ngValue]="tech"
             class="option"
           >
             {{tech.name}}
@@ -22,9 +21,9 @@
         </select>
       </div>
       <div class="field">
-        <label>Available applicants</label>
-        <select multiple name="applicants" [(ngModel)]="job.applicants">
-          <option *ngFor="let applicant of job.applicants" [ngValue]="applicant">
+        <label>Applicants</label>
+        <select multiple name="applicants" [(ngModel)]="job.applicants" disabled="true">
+          <option *ngFor="let applicant of job.applicants">
             {{applicant.fullName}}
           </option>
         </select>
@@ -43,5 +42,22 @@
     </div>
     <button type="submit">Send</button>
   </form>
+  </div>
+  <div class="right">
+    <div class="up" *ngFor="let applicant of applicants">
+      <img src={{applicant.avatar}} alt="avatar" class="img">
+      <div class="column">
+        <span>{{applicant.id}}</span>
+        <span>{{applicant.fullName}}</span>
+      </div>
+      <div class="column">
+        <p *ngFor="let tech of applicant.techs">{{tech.name}}</p>
+      </div>
+      <img src="../../assets/check.png" alt="available" class="free" *ngIf="applicant.isFree; else elseBlock">
+      <ng-template #elseBlock>
+        <img src="../../assets/uncheck.png" alt="unavailable" class="free">
+      </ng-template>
+      <button class="button" *ngIf="job.applicants.indexOf(applicant) < 0">Remove</button>
+    </div>
   </div>
 </div>
