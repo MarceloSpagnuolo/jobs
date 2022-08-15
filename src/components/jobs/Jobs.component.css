@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    width: 100vw;
+}
+
+.add {
+    width: 50%;
+    margin-top: 40px;
+}
+
+.add input {
+    font-size: 1em;
+    padding: 5px 0;
+}
+
+.add textarea {
+    font-size: 1em;
+}
+
+.add label {
+    font-size: 0.8em;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.add select {
+    font-size: 1em;
+    width: 100%;
+}
+
+.add select:first-child {
+    margin-right: 20px;
+}
+
+.option {
+    width: 100%;
+}
+
+.selects {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add button {
+    width: 100%;
+    padding: 7px 0;
+    background-color: cornflowerblue;
+    color: white;
+    border: 1px solid cornflowerblue;
+}
+
+.add button:hover {
+    cursor: pointer;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Id Project Description Techs Required_Applicants Applicants isDone";
+    column-gap: 20px;
+    padding: 10px 0;
+    border: 1px solid lightgrey;
+    text-decoration: none;
+}
+
+.isDone {
+    display: flex;
+    justify-content: center;
+}
+
+.done {
+    width: 30px;
+    height: 30px;
+}
+
+.jobs {
+    padding: 100px;
+}
+
+.formAdd > div:nth-child(4) > div:nth-child(2) {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.formAdd > div:nth-child(3) > div:nth-child(2) {
+    margin-left: 20px;
+}

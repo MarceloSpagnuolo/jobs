@@ -1,0 +1,32 @@
+<div>
+  <a [routerLink]="['/jobdetail', job.id]" class="list">
+  <div>
+    <p align="center">{{job.id}}</p>
+  </div>
+  <div>
+    <p>{{job.name}}</p>
+  </div>
+  <div>
+    <p>{{job.description}}</p>
+  </div>
+  <div>
+    <p *ngFor="let tech of job.techs">
+      {{tech.name}}
+    </p>
+  </div>
+  <div>
+    <p align="center">{{job.applicantsReq}}</p>
+  </div>
+  <div>
+    <p *ngFor="let applicant of job.applicants">
+      {{applicant.fullName}}
+    </p>
+  </div>
+  <div class="isDone">
+    <img src="../../assets//check.png" alt="check" *ngIf="job.isDone; else elseBlock" class="done">
+    <ng-template #elseBlock>
+      <img src="../../assets//uncheck.png" alt="uncheck" class="done">
+    </ng-template>
+  </div>
+</a>
+</div>

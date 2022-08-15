@@ -1,0 +1,20 @@
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Id Project Description Techs Required_Applicants Applicants isDone";
+    column-gap: 20px;
+    padding: 10px 0;
+    border: 1px solid lightgrey;
+    text-decoration: none;
+    color: black;
+}
+
+.isDone {
+    display: flex;
+    justify-content: center;
+}
+
+.done {
+    width: 30px;
+    height: 30px;
+}

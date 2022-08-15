@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="add">
+    <form class="formAdd" #project="ngForm" (ngSubmit)="addProy(project)">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="job.name">
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea rows="6" type="text" name="description" [(ngModel)]="job.description"></textarea>
+      </div>
+      <div class="selects">
+        <div class="field">
+          <label>Techs</label>
+          <select multiple name="techs" [(ngModel)]="job.techs">
+            <option *ngFor="let tech of techs"
+              [ngValue]="tech"
+              class="option"
+            >
+            {{tech.name}}
+          </option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Available applicants</label>
+          <select multiple name="applicants" [(ngModel)]="job.applicants">
+            <option *ngFor="let applicant of applicants" [ngValue]="applicant">
+              {{applicant.fullName}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="selects">
+        <div class="field">
+          <label>Required applicants</label>
+          <input type="number" name="applicantsReq" [(ngModel)]="job.applicantsReq">
+        </div>
+        <div class="selects">
+          <label>
+            <input type="checkbox" name="isdone" [(ngModel)]="job.isDone"> isDone
+          </label>
+        </div>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div class="jobs">
+    <div class="list">
+      <span align="center"><strong>Id</strong></span>
+      <span><strong>Project</strong></span>
+      <span><strong>Description</strong></span>
+      <span><strong>Techs</strong></span>
+      <span align="center"><strong>Required</strong></span>
+      <span><strong>Applicants</strong></span>
+      <span align="center"><strong>isDone</strong></span>
+    </div>
+    <app-job_card *ngFor="let job of jobs" [job]="job"></app-job_card>
+  </div>
+</div>

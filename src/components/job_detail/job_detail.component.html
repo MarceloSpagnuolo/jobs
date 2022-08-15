@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="content">
+    <form class="formAdd">
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="input" [(ngModel)]="job.name">
+    </div>
+    <div class="field">
+      <label for="description">Description</label>
+      <textarea rows="6" type="text" name="description" class="input" [(ngModel)]="job.description"></textarea>
+    </div>
+    <div class="selects">
+      <div class="field">
+        <label for="techs">Techs</label>
+        <select multiple name="techs" [(ngModel)]="job.techs">
+          <option *ngFor="let tech of job.techs"
+            [ngValue]="tech"
+            class="option"
+          >
+            {{tech.name}}
+          </option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Available applicants</label>
+        <select multiple name="applicants" [(ngModel)]="job.applicants">
+          <option *ngFor="let applicant of job.applicants" [ngValue]="applicant">
+            {{applicant.fullName}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="selects">
+      <div class="field">
+        <label>Required applicants</label>
+        <input type="number" name="applicantsReq" [(ngModel)]="job.applicantsReq" class="input">
+      </div>
+      <div class="selects">
+        <label>
+          <input type="checkbox" name="isdone" [(ngModel)]="job.isDone"> isDone
+        </label>
+      </div>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+  </div>
+</div>

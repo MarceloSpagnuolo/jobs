@@ -1,0 +1,55 @@
+.container {
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+.content {
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 50%;
+}
+
+.input {
+    font-size: 1em;
+    padding: 3px 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.selects {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field select {
+    font-size: 1em;
+    width: 100%;
+}
+
+.field option {
+    width: 100%;
+}
+
+.formAdd > div:nth-child(4) > div:nth-child(2) {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.formAdd > div:nth-child(3) > div:nth-child(2) {
+    margin-left: 20px;
+}
+
+.formAdd button {
+    width: 100%;
+    padding: 7px 0;
+    background-color: cornflowerblue;
+    color: white;
+    border: 1px solid cornflowerblue;
+}
