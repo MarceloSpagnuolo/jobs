@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 // import { Job_cardComponent } from 'src/components/job_card/job_card.component';
 // import { Job_detailComponent } from 'src/components/job_detail/job_detail.component';
 
-
 // OLD
 // const appRoutes:Routes=[
 //   {path:"", component:JobsComponent},
@@ -25,15 +24,13 @@ import { AppComponent } from './app.component';
 
 // APP.MODULE -> CARGA EL APP-ROUTING.MODULE -> CARGA "/" MainDashboardModule -> CARGA EL ARCHIVO RUTAS DE SU MODULO ( / - APPLICANTS  - JOBDETAIL/:ID)
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // RouterModule.forRoot(appRoutes),
     // FormsModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

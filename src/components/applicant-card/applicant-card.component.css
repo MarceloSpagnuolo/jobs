@@ -1,0 +1,23 @@
+.up {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid lightgray;
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.free {
+  width: 30px;
+  height: 30px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

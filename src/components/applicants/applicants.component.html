@@ -1,3 +1,66 @@
-<p>
-  applicants works!
-</p>
+<div class="container">
+  <div class="applicants">
+    <form class="search">
+      <div>
+        <select name="tech" class="select" [(ngModel)]="termino">
+          <option ngValue="name">Name</option>
+          <option ngValue="techs">Tech</option>
+        </select>
+        <input
+          type="text"
+          class="input"
+          placeholder="Enter a text"
+          name="search"
+          (keyup)="getApplicantsSearch($event)"
+          [disabled]="termino.length > 0 ? false : true"
+          id="input"
+        />
+        <button class="button" (click)="resetSearch()">Reset</button>
+      </div>
+      <div>
+        <div class="radio">
+          <input
+            type="radio"
+            class="radiobutton"
+            value="all"
+            name="isfree"
+            checked
+            (change)="availabilty($event)"
+          />
+          <label for="all" class="radiolabel">All</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            class="radiobutton"
+            value="free"
+            name="isfree"
+            (change)="availabilty($event)"
+          />
+          <label for="free" class="radiolabel">Free</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            class="radiobutton"
+            value="busy"
+            name="isfree"
+            (change)="availabilty($event)"
+          />
+          <label for="busy" class="radiolabel">Busy</label>
+        </div>
+      </div>
+    </form>
+    <div class="list">
+      <span class="center"><strong>Id</strong></span>
+      <span><strong>Avatar</strong></span>
+      <span><strong>Name</strong></span>
+      <span><strong>Techs</strong></span>
+      <span class="center"><strong>Available</strong></span>
+    </div>
+    <app-applicant-card
+      *ngFor="let applicant of applicants"
+      [applicant]="applicant"
+    ></app-applicant-card>
+  </div>
+</div>

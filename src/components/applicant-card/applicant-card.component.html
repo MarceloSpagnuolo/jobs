@@ -1,0 +1,23 @@
+<div class="up">
+  <div style="width: 100%; text-align: center">
+    <span>{{ applicant.id }}</span>
+  </div>
+  <img src="{{ applicant.avatar }}" alt="avatar" class="img" />
+  <div class="column">
+    <span>{{ applicant.fullName | applicant }}</span>
+  </div>
+  <div class="column">
+    <p *ngFor="let tech of applicant.techs">{{ tech.name }}</p>
+  </div>
+  <div style="width: 100%; text-align: center">
+    <img
+      src="../../assets/check.png"
+      alt="available"
+      class="free"
+      *ngIf="applicant.isFree; else elseBlock"
+    />
+    <ng-template #elseBlock>
+      <img src="../../assets/uncheck.png" alt="unavailable" class="free" />
+    </ng-template>
+  </div>
+</div>

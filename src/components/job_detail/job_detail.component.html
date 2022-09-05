@@ -1,64 +1,98 @@
-<div class="container">
+<div class="container" *ngIf="job">
   <div class="content">
-    <form class="formAdd">
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" name="name" class="input" [(ngModel)]="job.name">
-    </div>
-    <div class="field">
-      <label for="description">Description</label>
-      <textarea rows="6" type="text" name="description" class="input" [(ngModel)]="job.description"></textarea>
-    </div>
-    <div class="selects">
+    <form class="formAdd" (ngSubmit)="saveChanges()">
       <div class="field">
-        <label for="techs">Techs</label>
-        <select multiple name="techs" [(ngModel)]="job.techs" disabled="true">
-          <option *ngFor="let tech of job.techs"
-            class="option"
-          >
-            {{tech.name}}
-          </option>
-        </select>
+        <label for="name">Name</label>
+        <input type="text" name="name" class="input" [(ngModel)]="job.name" />
       </div>
       <div class="field">
-        <label>Applicants</label>
-        <select multiple name="applicants" [(ngModel)]="job.applicants" disabled="true">
-          <option *ngFor="let applicant of job.applicants">
-            {{applicant.fullName}}
-          </option>
-        </select>
-      </div>
-    </div>
-    <div class="selects">
-      <div class="field">
-        <label>Required applicants</label>
-        <input type="number" name="applicantsReq" [(ngModel)]="job.applicantsReq" class="input">
+        <label for="description">Description</label>
+        <textarea
+          rows="6"
+          type="text"
+          name="description"
+          class="input"
+          [(ngModel)]="job.description"
+        ></textarea>
       </div>
       <div class="selects">
-        <label>
-          <input type="checkbox" name="isdone" [(ngModel)]="job.isDone"> isDone
-        </label>
+        <div class="field">
+          <label for="techs">Techs</label>
+          <select multiple name="techs" [(ngModel)]="job.techs" disabled="true">
+            <option *ngFor="let tech of job.techs" class="option">
+              {{ tech.name }}
+            </option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Applicants</label>
+          <select
+            multiple
+            name="applicants"
+            [(ngModel)]="job.applicants"
+            disabled="true"
+          >
+            <option *ngFor="let applicant of job.applicants">
+              {{ applicant.fullName }}
+            </option>
+          </select>
+        </div>
       </div>
-    </div>
-    <button type="submit">Send</button>
-  </form>
+      <div class="selects">
+        <div class="field">
+          <label>Required applicants</label>
+          <input
+            type="number"
+            name="applicantsReq"
+            [(ngModel)]="job.applicantsReq"
+            class="input"
+          />
+        </div>
+        <div class="selects">
+          <label>
+            <input type="checkbox" name="isdone" [(ngModel)]="job.isDone" />
+            isDone
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="save">Save</button>
+    </form>
   </div>
   <div class="right">
     <div class="up" *ngFor="let applicant of applicants">
-      <img src={{applicant.avatar}} alt="avatar" class="img">
+      <img src="{{ applicant.avatar }}" alt="avatar" class="img" />
       <div class="column">
-        <span>{{applicant.id}}</span>
-        <span>{{applicant.fullName}}</span>
+        <span>{{ applicant.fullName }}</span>
       </div>
       <div class="column">
-        <p *ngFor="let tech of applicant.techs">{{tech.name}}</p>
+        <p *ngFor="let tech of applicant.techs">{{ tech.name }}</p>
       </div>
-      <img src="../../assets/check.png" alt="available" class="free" *ngIf="applicant.isFree; else elseBlock">
+      <img
+        src="../../assets/check.png"
+        alt="available"
+        class="free"
+        *ngIf="applicant.isFree; else elseBlock"
+      />
       <ng-template #elseBlock>
-        <img src="../../assets/uncheck.png" alt="unavailable" class="free">
+        <img src="../../assets/uncheck.png" alt="unavailable" class="free" />
       </ng-template>
-      
-      <button class="button" (click)="test()" *ngIf="job.applicants.indexOf(applicant) < 0">Remove</button>
+
+      <button
+        class="button-red"
+        (click)="removeApplicant(applicant.id)"
+        *ngIf="getAssignated(applicant); else elseButton"
+      >
+        Remove
+      </button>
+      <ng-template #elseButton>
+        <button
+          class="button-green"
+          (click)="addApplicant(applicant)"
+          *ngIf="applicant.isFree"
+        >
+          Assign
+        </button>
+      </ng-template>
     </div>
   </div>
 </div>

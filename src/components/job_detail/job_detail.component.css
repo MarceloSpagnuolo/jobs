@@ -1,88 +1,114 @@
 .container {
-    font-family: Montserrat;
-    font-size: 16px;
-    display: flex;
+  font-family: Montserrat;
+  font-size: 16px;
+  display: flex;
 }
 
 .content {
-    margin-top: 40px;
-    margin-left: 40px;
-    width: 50%;
-    margin-right: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 50%;
+  margin-right: 20px;
 }
 
 .input {
-    font-size: 1em;
-    padding: 3px 0;
+  font-size: 1em;
+  padding: 3px 0;
 }
 
 .field {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .selects {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .field select {
-    font-size: 1em;
-    width: 100%;
+  font-size: 1em;
+  width: 100%;
 }
 
 .field option {
-    width: 100%;
+  width: 100%;
 }
 
 .formAdd > div:nth-child(4) > div:nth-child(2) {
-    margin-left: 20px;
-    font-size: 20px;
+  margin-left: 20px;
+  font-size: 20px;
 }
 
 .formAdd > div:nth-child(3) > div:nth-child(2) {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .formAdd button {
-    width: 100%;
-    padding: 7px 0;
-    background-color: cornflowerblue;
-    color: white;
-    border: 1px solid cornflowerblue;
+  width: 100%;
+  padding: 7px 0;
+  background-color: cornflowerblue;
+  color: white;
+  border: 1px solid cornflowerblue;
 }
 
 .img {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 .right {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .up {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr;
-    width: 100%;
-    padding: 10px 0;
-    border-bottom: 1px solid gray;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr 2fr;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .free {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.button-green {
+  background-color: #008f39;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+}
+
+.button-green:hover {
+  cursor: pointer;
+}
+
+.button-red {
+  background-color: rgba(255, 0, 0, 1);
+  border-radius: 10px;
+  border: 0;
+  color: white;
+}
+
+.button-red:hover {
+  cursor: pointer;
+}
+
+.save:hover {
+  cursor: pointer;
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('src/app/app/pages/main-dashboard.module').then((m) => m.MainDashboardModule),
+      import('src/app/pages/main-dashboard.module').then((m) => m.MainDashboardModule),
   },
   // {
   //   path: 'administrador',

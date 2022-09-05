@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApplicantsService } from 'src/services/applicants.service';
 import { JobsService } from 'src/services/jobs.service';
 import { TechsService } from 'src/services/techs.service';
-
+import { ApplicantCardComponent } from 'src/components/applicant-card/applicant-card.component';
+import { ApplicantPipe } from '../pipes/applicant.pipe';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { TechsService } from 'src/services/techs.service';
     ApplicantsComponent,
     Job_cardComponent,
     Job_detailComponent,
+    ApplicantCardComponent,
+    ApplicantPipe,
   ],
   imports: [
     CommonModule,
     MainDashboardRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [TechsService, JobsService, ApplicantsService],
 })
-export class MainDashboardModule { }
+export class MainDashboardModule {}

@@ -1,0 +1,68 @@
+.container {
+  font-family: Montserrat;
+  font-size: 20px;
+}
+
+.search {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.input {
+  font-size: 1em;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.input:disabled:hover {
+  cursor: no-drop;
+}
+
+.button {
+  width: 60px;
+  height: 36px;
+  margin-left: 10px;
+  background-color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  color: white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.select {
+  font-size: 1em;
+  padding: 5px 10px;
+}
+
+.applicants {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 20px;
+  column-gap: 20px;
+  padding: 10px 0;
+  border: 1px solid lightgrey;
+  text-decoration: none;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
+}
+
+.radiolabel {
+  margin-left: 10px;
+}
+
+.radiobutton:hover {
+  cursor: pointer;
+}
